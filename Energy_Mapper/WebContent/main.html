@@ -1,0 +1,1925 @@
+<!DOCTYPE html> 
+<html> 
+	<head>     
+		<meta charset="Utf-8">     
+		<meta name="viewport" content="width=device-width, initial-scale=1">     
+		<title>Renewable Energy Mapping</title>     
+		<link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+		<link href="css/custom.css" rel="stylesheet" type="text/css"> 
+		<link href="css/jquery-ui.css" rel="stylesheet" type="text/css">
+		<link href="css/jquery-ui.theme.css" rel="stylesheet" type="text/css"> 
+	</head>      
+	
+	<body>     
+		<div class="navbar navbar-inverse navbar-fixed-top">         
+			<div class="container">
+				<a href="#" class="navbar-brand">
+					Renewable Energy Mapping
+				</a>                             
+				<button class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">                 
+					<span class="icon-bar"></span>                 
+					<span class="icon-bar"></span>                 
+					<span class="icon-bar"></span>             
+				</button>                          
+				<div class="collapse navbar-collapse navHeaderCollapse">             
+					<ul class="nav navbar-nav navbar-right">                 
+						<li><a href="#" onclick='$("#abstract").dialog();'>Abstract</a></li>
+						<li><a href="#" onclick='$("#contributers").dialog();'>Contributers</a></li>
+					</ul>         
+				</div>         
+			</div>              
+		</div>
+		
+		<div class = "container" style="position:relative; margin-top:70px;">
+			<div class="row">
+				<div class="col-md-7">
+					<img src="egypt.png" class="center-block"></img>
+					<div id="cairo" style="position: absolute; top:80px; left:408px;" onclick='$("#cair-dialog").dialog();'>X</div>
+					<div id="aswan" style="position: absolute; top:383px; left:483px;" onclick='$("#aswn-dialog").dialog();'>X</div>
+					<div id="alexandria" style="position: absolute; top:19px; left:346px;" onclick='$("#alex-dialog").dialog();'>X</div>
+					<div id="sharm" style="position: absolute; top:195px; left:540px;" onclick="$('#shrm-dialog').dialog();">X</div>
+					<div id="sharm" style="position: absolute; top:195px; left:390px;" onclick="$('#mnya-dialog').dialog();">X</div>
+					<div id="sant" style="position: absolute; top:165px; left:540px;" onclick="$('#sant-dialog').dialog();">X</div>
+					<div id="sfga" style="position: absolute; top:215px; left:520px;" onclick="$('#sfga-dialog').dialog();">X</div>
+					<div id="asyt" style="position: absolute; top:229px; left:405px;" onclick="$('#asyt-dialog').dialog();">X</div>
+					<div id="luxr" style="position: absolute; top:305px; left:470px;" onclick="$('#luxr-dialog').dialog();">X</div>
+				</div>
+				<div class="col-md-5">
+					<h3>Top City with solar output</h3>
+					<h4 class="max-solar-name"></h4>
+					<h4 class="max-solar-output"></h4>
+					<br/>
+					<h3>Top City with wind output</h3>
+					<h4 class="max-wind-name"></h4>
+					<h4 class="max-wind-output"></h4>
+				</div>
+			</div>	
+		</div>
+
+		<div id="dialog-container" style="display:none">
+			<div id="abstract" title="Abstract">
+				It is speculated by experts that by the end of the decade, non-renewable energy resources like oil and gas will no longer be sufficient to fulfill global consumption needs. As the Earth’s fossil fuel reserves continue to diminish, governments are exerting efforts to search for more ways to either partially or fully transition to renewable energy resources instead. One of the major factors involved in maximizing the efficiency of these renewable energy resources throughout the year is location; that is, where is the optimum location for building a solar plant, or a wind farm. Given also Egypt's 90+% of desert areas and growing population, the need for relocation to new areas supported by energy is also in demand.
+
+The proposed project aims to utilize a network of sensors placed in very remote areas to record necessary information on wind and solar light. The obtained information is then processed to obtain statistics and energy output forecasts that can be placed on a map for strategic decision on making on where to deploy energy farms.
+			</div>
+			<div id="contributers" title="Contributers">
+				<h2>By undergraduates of MSA University</h2>
+				<h3>Ali El-Saeed</h3>
+				<h3>Amr Sherif</h3>
+				<h3>Fatima Fouda</h3>
+				<h3>Hesham Ameen</h3>
+				<h3>Youssef Al-Azhary</h3>
+			</div>
+			<div id="cair-dialog" title="Cairo" style="height:515px; overflow:scroll">
+				
+				<ul class="nav nav-tabs">
+				  <li class="active"><a data-toggle="tab" href="#cair-solar">Solar</a></li>
+				  <li><a data-toggle="tab" href="#cair-wind">Wind</a></li>
+				</ul>
+
+				<div class="tab-content">
+					
+					<br/>
+					
+					<div id = "cair-solar" class="tab-pane fade in active">
+
+						<div class = "row">
+							<div class = "col-md-3">
+								<img src="zap_icon.png" style="width:50%;height:50%" class="img-circle img-responsive center-block"></img>
+							</div>
+							<div class = "col-md-9">
+								<h4 style="position:relative; top:20px;">Average energy capacity over the next 3 years is <span class="cair-solar-3year">500 KWM</span></h4>
+							</div>
+						</div>
+						
+						<br/>
+						
+						<div class = "row">
+							<div class = "col-md-3">
+								<h2 class="center-block text-center">Per year</h2>
+							</div>
+							<div class = "col-md-3 center-block text-center">
+								2014 <h4 class="center-block text-center cair-solar-y1"></h4>
+							</div>
+							<div class = "col-md-3 center-block text-center">
+								2015 <h4 class="center-block text-center cair-solar-y2"></h4>
+							</div>
+							<div class = "col-md-3 center-block text-center">
+								2016 <h4 class="center-block text-center cair-solar-y3"></h4>
+							</div>
+						</div>
+						
+						<br/>
+						
+						<div class = "row">
+							<div class = "col-md-3">
+								<h2 class="center-block text-center">Quarters</h2>
+							</div>
+							<div class = "col-md-9">
+								<div class = "center-block text-center row">
+									2014		
+								</div>
+								<div class = "row">
+									<div class = "col-md-3">
+										<h4 class="center-block text-center cair-solar-y1q1">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center cair-solar-y1q2">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center cair-solar-y1q3">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center cair-solar-y1q4">500 KW</h4>
+									</div>
+								</div>
+								
+								<br/>
+								
+								<div class = "center-block text-center row">
+									2015
+								</div>
+								<div class = "row">
+									<div class = "col-md-3">
+										<h4 class="center-block text-center cair-solar-y2q1">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center cair-solar-y2q2">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center cair-solar-y2q3">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center cair-solar-y2q4">500 KW</h4>
+									</div>
+								</div>
+								
+								<br/>
+								
+								<div class = "center-block text-center row">
+									2016
+								</div>
+								<div class = "row">
+									<div class = "col-md-3">
+										<h4 class="center-block text-center cair-solar-y3q1">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center cair-solar-y3q2">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center cair-solar-y3q3">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center cair-solar-y3q4">500 KW</h4>
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+					<div id="cair-wind" class="tab-pane fade">
+					      <div class = "row">
+							<div class = "col-md-3">
+								<img src="zap_icon.png" style="width:50%;height:50%" class="img-circle img-responsive center-block"></img>
+							</div>
+							<div class = "col-md-9">
+								<h4 style="position:relative; top:20px;">Average energy capacity over the next 3 years is <span class="cair-wind-3year">500 KWM</span></h4>
+							</div>
+						</div>
+						
+						<br/>
+						
+						<div class = "row">
+							<div class = "col-md-3">
+								<h2 class="center-block text-center">Per year</h2>
+							</div>
+							<div class = "col-md-3 center-block text-center">
+								2014 <h4 class="center-block text-center cair-wind-y1"></h4>
+							</div>
+							<div class = "col-md-3 center-block text-center">
+								2015 <h4 class="center-block text-center cair-wind-y2"></h4>
+							</div>
+							<div class = "col-md-3 center-block text-center">
+								2016 <h4 class="center-block text-center cair-wind-y3"></h4>
+							</div>
+						</div>
+						
+						<br/>
+						
+						<div class = "row">
+							<div class = "col-md-3">
+								<h2 class="center-block text-center">Quarters</h2>
+							</div>
+							<div class = "col-md-9">
+								<div class = "center-block text-center row">
+									2014		
+								</div>
+								<div class = "row">
+									<div class = "col-md-3">
+										<h4 class="center-block text-center cair-wind-y1q1">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center cair-wind-y1q2">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center cair-wind-y1q3">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center cair-wind-y1q4">500 KW</h4>
+									</div>
+								</div>
+								
+								<br/>
+								
+								<div class = "center-block text-center row">
+									2015
+								</div>
+								<div class = "row">
+									<div class = "col-md-3">
+										<h4 class="center-block text-center cair-wind-y2q1">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center cair-wind-y2q2">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center cair-wind-y2q3">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center cair-wind-y2q4">500 KW</h4>
+									</div>
+								</div>
+								
+								<br/>
+								
+								<div class = "center-block text-center row">
+									2016
+								</div>
+								<div class = "row">
+									<div class = "col-md-3">
+										<h4 class="center-block text-center cair-wind-y3q1">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center cair-wind-y3q2">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center cair-wind-y3q3">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center cair-wind-y3q4">500 KW</h4>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				
+			</div>
+		</div>
+		
+		<div id="alex-dialog" title="Alexandria" style="height:515px; overflow:scroll">
+				
+				<ul class="nav nav-tabs">
+				  <li class="active"><a data-toggle="tab" href="#alex-solar">Solar</a></li>
+				  <li><a data-toggle="tab" href="#alex-wind">Wind</a></li>
+				</ul>
+
+				<div class="tab-content">
+					
+					<br/>
+					
+					<div id = "alex-solar" class="tab-pane fade in active">
+
+						<div class = "row">
+							<div class = "col-md-3">
+								<img src="zap_icon.png" style="width:50%;height:50%" class="img-circle img-responsive center-block"></img>
+							</div>
+							<div class = "col-md-9">
+								<h4 style="position:relative; top:20px;">Average energy capacity over the next 3 years is <span class="alex-solar-3year">500 KWM</span></h4>
+							</div>
+						</div>
+						
+						<br/>
+						
+						<div class = "row">
+							<div class = "col-md-3">
+								<h2 class="center-block text-center">Per year</h2>
+							</div>
+							<div class = "col-md-3 center-block text-center">
+								2014 <h4 class="center-block text-center alex-solar-y1"></h4>
+							</div>
+							<div class = "col-md-3 center-block text-center">
+								2015 <h4 class="center-block text-center alex-solar-y2"></h4>
+							</div>
+							<div class = "col-md-3 center-block text-center">
+								2016 <h4 class="center-block text-center alex-solar-y3"></h4>
+							</div>
+						</div>
+						
+						<br/>
+						
+						<div class = "row">
+							<div class = "col-md-3">
+								<h2 class="center-block text-center">Quarters</h2>
+							</div>
+							<div class = "col-md-9">
+								<div class = "center-block text-center row">
+									2014		
+								</div>
+								<div class = "row">
+									<div class = "col-md-3">
+										<h4 class="center-block text-center alex-solar-y1q1">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center alex-solar-y1q2">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center alex-solar-y1q3">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center alex-solar-y1q4">500 KW</h4>
+									</div>
+								</div>
+								
+								<br/>
+								
+								<div class = "center-block text-center row">
+									2015
+								</div>
+								<div class = "row">
+									<div class = "col-md-3">
+										<h4 class="center-block text-center alex-solar-y2q1">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center alex-solar-y2q2">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center alex-solar-y2q3">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center alex-solar-y2q4">500 KW</h4>
+									</div>
+								</div>
+								
+								<br/>
+								
+								<div class = "center-block text-center row">
+									2016
+								</div>
+								<div class = "row">
+									<div class = "col-md-3">
+										<h4 class="center-block text-center alex-solar-y3q1">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center alex-solar-y3q2">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center alex-solar-y3q3">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center alex-solar-y3q4">500 KW</h4>
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+					<div id="alex-wind" class="tab-pane fade">
+					      <div class = "row">
+							<div class = "col-md-3">
+								<img src="zap_icon.png" style="width:50%;height:50%" class="img-circle img-responsive center-block"></img>
+							</div>
+							<div class = "col-md-9">
+								<h4 style="position:relative; top:20px;">Average energy capacity over the next 3 years is <span class="alex-wind-3year">500 KWM</span></h4>
+							</div>
+						</div>
+						
+						<br/>
+						
+						<div class = "row">
+							<div class = "col-md-3">
+								<h2 class="center-block text-center">Per year</h2>
+							</div>
+							<div class = "col-md-3 center-block text-center">
+								2014 <h4 class="center-block text-center alex-wind-y1"></h4>
+							</div>
+							<div class = "col-md-3 center-block text-center">
+								2015 <h4 class="center-block text-center alex-wind-y2"></h4>
+							</div>
+							<div class = "col-md-3 center-block text-center">
+								2016 <h4 class="center-block text-center alex-wind-y3"></h4>
+							</div>
+						</div>
+						
+						<br/>
+						
+						<div class = "row">
+							<div class = "col-md-3">
+								<h2 class="center-block text-center">Quarters</h2>
+							</div>
+							<div class = "col-md-9">
+								<div class = "center-block text-center row">
+									2014		
+								</div>
+								<div class = "row">
+									<div class = "col-md-3">
+										<h4 class="center-block text-center alex-wind-y1q1">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center alex-wind-y1q2">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center alex-wind-y1q3">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center alex-wind-y1q4">500 KW</h4>
+									</div>
+								</div>
+								
+								<br/>
+								
+								<div class = "center-block text-center row">
+									2015
+								</div>
+								<div class = "row">
+									<div class = "col-md-3">
+										<h4 class="center-block text-center alex-wind-y2q1">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center alex-wind-y2q2">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center alex-wind-y2q3">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center alex-wind-y2q4">500 KW</h4>
+									</div>
+								</div>
+								
+								<br/>
+								
+								<div class = "center-block text-center row">
+									2016
+								</div>
+								<div class = "row">
+									<div class = "col-md-3">
+										<h4 class="center-block text-center alex-wind-y3q1">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center alex-wind-y3q2">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center alex-wind-y3q3">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center alex-wind-y3q4">500 KW</h4>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				
+			</div>
+		</div>
+		
+		<div id="aswn-dialog" title="Aswan" style="height:515px; overflow:scroll">
+				
+				<ul class="nav nav-tabs">
+				  <li class="active"><a data-toggle="tab" href="#aswn-solar">Solar</a></li>
+				  <li><a data-toggle="tab" href="#aswn-wind">Wind</a></li>
+				</ul>
+
+				<div class="tab-content">
+					
+					<br/>
+					
+					<div id = "aswn-solar" class="tab-pane fade in active">
+
+						<div class = "row">
+							<div class = "col-md-3">
+								<img src="zap_icon.png" style="width:50%;height:50%" class="img-circle img-responsive center-block"></img>
+							</div>
+							<div class = "col-md-9">
+								<h4 style="position:relative; top:20px;">Average energy capacity over the next 3 years is <span class="aswn-solar-3year">500 KWM</span></h4>
+							</div>
+						</div>
+						
+						<br/>
+						
+						<div class = "row">
+							<div class = "col-md-3">
+								<h2 class="center-block text-center">Per year</h2>
+							</div>
+							<div class = "col-md-3 center-block text-center">
+								2014 <h4 class="center-block text-center aswn-solar-y1"></h4>
+							</div>
+							<div class = "col-md-3 center-block text-center">
+								2015 <h4 class="center-block text-center aswn-solar-y2"></h4>
+							</div>
+							<div class = "col-md-3 center-block text-center">
+								2016 <h4 class="center-block text-center aswn-solar-y3"></h4>
+							</div>
+						</div>
+						
+						<br/>
+						
+						<div class = "row">
+							<div class = "col-md-3">
+								<h2 class="center-block text-center">Quarters</h2>
+							</div>
+							<div class = "col-md-9">
+								<div class = "center-block text-center row">
+									2014		
+								</div>
+								<div class = "row">
+									<div class = "col-md-3">
+										<h4 class="center-block text-center aswn-solar-y1q1">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center aswn-solar-y1q2">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center aswn-solar-y1q3">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center aswn-solar-y1q4">500 KW</h4>
+									</div>
+								</div>
+								
+								<br/>
+								
+								<div class = "center-block text-center row">
+									2015
+								</div>
+								<div class = "row">
+									<div class = "col-md-3">
+										<h4 class="center-block text-center aswn-solar-y2q1">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center aswn-solar-y2q2">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center aswn-solar-y2q3">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center aswn-solar-y2q4">500 KW</h4>
+									</div>
+								</div>
+								
+								<br/>
+								
+								<div class = "center-block text-center row">
+									2016
+								</div>
+								<div class = "row">
+									<div class = "col-md-3">
+										<h4 class="center-block text-center aswn-solar-y3q1">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center aswn-solar-y3q2">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center aswn-solar-y3q3">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center aswn-solar-y3q4">500 KW</h4>
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+					<div id="aswn-wind" class="tab-pane fade">
+					      <div class = "row">
+							<div class = "col-md-3">
+								<img src="zap_icon.png" style="width:50%;height:50%" class="img-circle img-responsive center-block"></img>
+							</div>
+							<div class = "col-md-9">
+								<h4 style="position:relative; top:20px;">Average energy capacity over the next 3 years is <span class="aswn-wind-3year">500 KWM</span></h4>
+							</div>
+						</div>
+						
+						<br/>
+						
+						<div class = "row">
+							<div class = "col-md-3">
+								<h2 class="center-block text-center">Per year</h2>
+							</div>
+							<div class = "col-md-3 center-block text-center">
+								2014 <h4 class="center-block text-center aswn-wind-y1"></h4>
+							</div>
+							<div class = "col-md-3 center-block text-center">
+								2015 <h4 class="center-block text-center aswn-wind-y2"></h4>
+							</div>
+							<div class = "col-md-3 center-block text-center">
+								2016 <h4 class="center-block text-center aswn-wind-y3"></h4>
+							</div>
+						</div>
+						
+						<br/>
+						
+						<div class = "row">
+							<div class = "col-md-3">
+								<h2 class="center-block text-center">Quarters</h2>
+							</div>
+							<div class = "col-md-9">
+								<div class = "center-block text-center row">
+									2014		
+								</div>
+								<div class = "row">
+									<div class = "col-md-3">
+										<h4 class="center-block text-center aswn-wind-y1q1">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center aswn-wind-y1q2">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center aswn-wind-y1q3">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center aswn-wind-y1q4">500 KW</h4>
+									</div>
+								</div>
+								
+								<br/>
+								
+								<div class = "center-block text-center row">
+									2015
+								</div>
+								<div class = "row">
+									<div class = "col-md-3">
+										<h4 class="center-block text-center aswn-wind-y2q1">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center aswn-wind-y2q2">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center aswn-wind-y2q3">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center aswn-wind-y2q4">500 KW</h4>
+									</div>
+								</div>
+								
+								<br/>
+								
+								<div class = "center-block text-center row">
+									2016
+								</div>
+								<div class = "row">
+									<div class = "col-md-3">
+										<h4 class="center-block text-center aswn-wind-y3q1">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center aswn-wind-y3q2">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center aswn-wind-y3q3">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center aswn-wind-y3q4">500 KW</h4>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				
+			</div>
+		</div>
+		
+		<div id="sant-dialog" title="St. Catherine" style="height:515px; overflow:scroll">
+				
+				<ul class="nav nav-tabs">
+				  <li class="active"><a data-toggle="tab" href="#sant-solar">Solar</a></li>
+				  <li><a data-toggle="tab" href="#sant-wind">Wind</a></li>
+				</ul>
+
+				<div class="tab-content">
+					
+					<br/>
+					
+					<div id = "sant-solar" class="tab-pane fade in active">
+
+						<div class = "row">
+							<div class = "col-md-3">
+								<img src="zap_icon.png" style="width:50%;height:50%" class="img-circle img-responsive center-block"></img>
+							</div>
+							<div class = "col-md-9">
+								<h4 style="position:relative; top:20px;">Average energy capacity over the next 3 years is <span class="sant-solar-3year">500 KWM</span></h4>
+							</div>
+						</div>
+						
+						<br/>
+						
+						<div class = "row">
+							<div class = "col-md-3">
+								<h2 class="center-block text-center">Per year</h2>
+							</div>
+							<div class = "col-md-3 center-block text-center">
+								2014 <h4 class="center-block text-center sant-solar-y1"></h4>
+							</div>
+							<div class = "col-md-3 center-block text-center">
+								2015 <h4 class="center-block text-center sant-solar-y2"></h4>
+							</div>
+							<div class = "col-md-3 center-block text-center">
+								2016 <h4 class="center-block text-center sant-solar-y3"></h4>
+							</div>
+						</div>
+						
+						<br/>
+						
+						<div class = "row">
+							<div class = "col-md-3">
+								<h2 class="center-block text-center">Quarters</h2>
+							</div>
+							<div class = "col-md-9">
+								<div class = "center-block text-center row">
+									2014		
+								</div>
+								<div class = "row">
+									<div class = "col-md-3">
+										<h4 class="center-block text-center sant-solar-y1q1">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center sant-solar-y1q2">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center sant-solar-y1q3">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center sant-solar-y1q4">500 KW</h4>
+									</div>
+								</div>
+								
+								<br/>
+								
+								<div class = "center-block text-center row">
+									2015
+								</div>
+								<div class = "row">
+									<div class = "col-md-3">
+										<h4 class="center-block text-center sant-solar-y2q1">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center sant-solar-y2q2">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center sant-solar-y2q3">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center sant-solar-y2q4">500 KW</h4>
+									</div>
+								</div>
+								
+								<br/>
+								
+								<div class = "center-block text-center row">
+									2016
+								</div>
+								<div class = "row">
+									<div class = "col-md-3">
+										<h4 class="center-block text-center sant-solar-y3q1">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center sant-solar-y3q2">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center sant-solar-y3q3">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center sant-solar-y3q4">500 KW</h4>
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+					<div id="sant-wind" class="tab-pane fade">
+					      <div class = "row">
+							<div class = "col-md-3">
+								<img src="zap_icon.png" style="width:50%;height:50%" class="img-circle img-responsive center-block"></img>
+							</div>
+							<div class = "col-md-9">
+								<h4 style="position:relative; top:20px;">Average energy capacity over the next 3 years is <span class="sant-wind-3year">500 KWM</span></h4>
+							</div>
+						</div>
+						
+						<br/>
+						
+						<div class = "row">
+							<div class = "col-md-3">
+								<h2 class="center-block text-center">Per year</h2>
+							</div>
+							<div class = "col-md-3 center-block text-center">
+								2014 <h4 class="center-block text-center sant-wind-y1"></h4>
+							</div>
+							<div class = "col-md-3 center-block text-center">
+								2015 <h4 class="center-block text-center sant-wind-y2"></h4>
+							</div>
+							<div class = "col-md-3 center-block text-center">
+								2016 <h4 class="center-block text-center sant-wind-y3"></h4>
+							</div>
+						</div>
+						
+						<br/>
+						
+						<div class = "row">
+							<div class = "col-md-3">
+								<h2 class="center-block text-center">Quarters</h2>
+							</div>
+							<div class = "col-md-9">
+								<div class = "center-block text-center row">
+									2014		
+								</div>
+								<div class = "row">
+									<div class = "col-md-3">
+										<h4 class="center-block text-center sant-wind-y1q1">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center sant-wind-y1q2">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center sant-wind-y1q3">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center sant-wind-y1q4">500 KW</h4>
+									</div>
+								</div>
+								
+								<br/>
+								
+								<div class = "center-block text-center row">
+									2015
+								</div>
+								<div class = "row">
+									<div class = "col-md-3">
+										<h4 class="center-block text-center sant-wind-y2q1">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center sant-wind-y2q2">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center sant-wind-y2q3">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center sant-wind-y2q4">500 KW</h4>
+									</div>
+								</div>
+								
+								<br/>
+								
+								<div class = "center-block text-center row">
+									2016
+								</div>
+								<div class = "row">
+									<div class = "col-md-3">
+										<h4 class="center-block text-center sant-wind-y3q1">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center sant-wind-y3q2">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center sant-wind-y3q3">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center sant-wind-y3q4">500 KW</h4>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				
+			</div>
+		</div>
+		
+		<div id="shrm-dialog" title="Sharm El-Sheikh" style="height:515px; overflow:scroll">
+				
+				<ul class="nav nav-tabs">
+				  <li class="active"><a data-toggle="tab" href="#shrm-solar">Solar</a></li>
+				  <li><a data-toggle="tab" href="#shrm-wind">Wind</a></li>
+				</ul>
+
+				<div class="tab-content">
+					
+					<br/>
+					
+					<div id = "shrm-solar" class="tab-pane fade in active">
+
+						<div class = "row">
+							<div class = "col-md-3">
+								<img src="zap_icon.png" style="width:50%;height:50%" class="img-circle img-responsive center-block"></img>
+							</div>
+							<div class = "col-md-9">
+								<h4 style="position:relative; top:20px;">Average energy capacity over the next 3 years is <span class="shrm-solar-3year">500 KWM</span></h4>
+							</div>
+						</div>
+						
+						<br/>
+						
+						<div class = "row">
+							<div class = "col-md-3">
+								<h2 class="center-block text-center">Per year</h2>
+							</div>
+							<div class = "col-md-3 center-block text-center">
+								2014 <h4 class="center-block text-center shrm-solar-y1"></h4>
+							</div>
+							<div class = "col-md-3 center-block text-center">
+								2015 <h4 class="center-block text-center shrm-solar-y2"></h4>
+							</div>
+							<div class = "col-md-3 center-block text-center">
+								2016 <h4 class="center-block text-center shrm-solar-y3"></h4>
+							</div>
+						</div>
+						
+						<br/>
+						
+						<div class = "row">
+							<div class = "col-md-3">
+								<h2 class="center-block text-center">Quarters</h2>
+							</div>
+							<div class = "col-md-9">
+								<div class = "center-block text-center row">
+									2014		
+								</div>
+								<div class = "row">
+									<div class = "col-md-3">
+										<h4 class="center-block text-center shrm-solar-y1q1">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center shrm-solar-y1q2">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center shrm-solar-y1q3">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center shrm-solar-y1q4">500 KW</h4>
+									</div>
+								</div>
+								
+								<br/>
+								
+								<div class = "center-block text-center row">
+									2015
+								</div>
+								<div class = "row">
+									<div class = "col-md-3">
+										<h4 class="center-block text-center shrm-solar-y2q1">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center shrm-solar-y2q2">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center shrm-solar-y2q3">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center shrm-solar-y2q4">500 KW</h4>
+									</div>
+								</div>
+								
+								<br/>
+								
+								<div class = "center-block text-center row">
+									2016
+								</div>
+								<div class = "row">
+									<div class = "col-md-3">
+										<h4 class="center-block text-center shrm-solar-y3q1">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center shrm-solar-y3q2">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center shrm-solar-y3q3">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center shrm-solar-y3q4">500 KW</h4>
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+					<div id="shrm-wind" class="tab-pane fade">
+					      <div class = "row">
+							<div class = "col-md-3">
+								<img src="zap_icon.png" style="width:50%;height:50%" class="img-circle img-responsive center-block"></img>
+							</div>
+							<div class = "col-md-9">
+								<h4 style="position:relative; top:20px;">Average energy capacity over the next 3 years is <span class="shrm-wind-3year">500 KWM</span></h4>
+							</div>
+						</div>
+						
+						<br/>
+						
+						<div class = "row">
+							<div class = "col-md-3">
+								<h2 class="center-block text-center">Per year</h2>
+							</div>
+							<div class = "col-md-3 center-block text-center">
+								2014 <h4 class="center-block text-center shrm-wind-y1"></h4>
+							</div>
+							<div class = "col-md-3 center-block text-center">
+								2015 <h4 class="center-block text-center shrm-wind-y2"></h4>
+							</div>
+							<div class = "col-md-3 center-block text-center">
+								2016 <h4 class="center-block text-center shrm-wind-y3"></h4>
+							</div>
+						</div>
+						
+						<br/>
+						
+						<div class = "row">
+							<div class = "col-md-3">
+								<h2 class="center-block text-center">Quarters</h2>
+							</div>
+							<div class = "col-md-9">
+								<div class = "center-block text-center row">
+									2014		
+								</div>
+								<div class = "row">
+									<div class = "col-md-3">
+										<h4 class="center-block text-center shrm-wind-y1q1">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center shrm-wind-y1q2">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center shrm-wind-y1q3">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center shrm-wind-y1q4">500 KW</h4>
+									</div>
+								</div>
+								
+								<br/>
+								
+								<div class = "center-block text-center row">
+									2015
+								</div>
+								<div class = "row">
+									<div class = "col-md-3">
+										<h4 class="center-block text-center shrm-wind-y2q1">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center shrm-wind-y2q2">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center shrm-wind-y2q3">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center shrm-wind-y2q4">500 KW</h4>
+									</div>
+								</div>
+								
+								<br/>
+								
+								<div class = "center-block text-center row">
+									2016
+								</div>
+								<div class = "row">
+									<div class = "col-md-3">
+										<h4 class="center-block text-center shrm-wind-y3q1">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center shrm-wind-y3q2">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center shrm-wind-y3q3">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center shrm-wind-y3q4">500 KW</h4>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				
+			</div>
+		</div>
+		
+		<div id="mnya-dialog" title="Menya" style="height:515px; overflow:scroll">
+				
+				<ul class="nav nav-tabs">
+				  <li class="active"><a data-toggle="tab" href="#mnya-solar">Solar</a></li>
+				  <li><a data-toggle="tab" href="#mnya-wind">Wind</a></li>
+				</ul>
+
+				<div class="tab-content">
+					
+					<br/>
+					
+					<div id = "mnya-solar" class="tab-pane fade in active">
+
+						<div class = "row">
+							<div class = "col-md-3">
+								<img src="zap_icon.png" style="width:50%;height:50%" class="img-circle img-responsive center-block"></img>
+							</div>
+							<div class = "col-md-9">
+								<h4 style="position:relative; top:20px;">Average energy capacity over the next 3 years is <span class="mnya-solar-3year">500 KWM</span></h4>
+							</div>
+						</div>
+						
+						<br/>
+						
+						<div class = "row">
+							<div class = "col-md-3">
+								<h2 class="center-block text-center">Per year</h2>
+							</div>
+							<div class = "col-md-3 center-block text-center">
+								2014 <h4 class="center-block text-center mnya-solar-y1"></h4>
+							</div>
+							<div class = "col-md-3 center-block text-center">
+								2015 <h4 class="center-block text-center mnya-solar-y2"></h4>
+							</div>
+							<div class = "col-md-3 center-block text-center">
+								2016 <h4 class="center-block text-center mnya-solar-y3"></h4>
+							</div>
+						</div>
+						
+						<br/>
+						
+						<div class = "row">
+							<div class = "col-md-3">
+								<h2 class="center-block text-center">Quarters</h2>
+							</div>
+							<div class = "col-md-9">
+								<div class = "center-block text-center row">
+									2014		
+								</div>
+								<div class = "row">
+									<div class = "col-md-3">
+										<h4 class="center-block text-center mnya-solar-y1q1">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center mnya-solar-y1q2">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center mnya-solar-y1q3">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center mnya-solar-y1q4">500 KW</h4>
+									</div>
+								</div>
+								
+								<br/>
+								
+								<div class = "center-block text-center row">
+									2015
+								</div>
+								<div class = "row">
+									<div class = "col-md-3">
+										<h4 class="center-block text-center mnya-solar-y2q1">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center mnya-solar-y2q2">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center mnya-solar-y2q3">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center mnya-solar-y2q4">500 KW</h4>
+									</div>
+								</div>
+								
+								<br/>
+								
+								<div class = "center-block text-center row">
+									2016
+								</div>
+								<div class = "row">
+									<div class = "col-md-3">
+										<h4 class="center-block text-center mnya-solar-y3q1">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center mnya-solar-y3q2">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center mnya-solar-y3q3">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center mnya-solar-y3q4">500 KW</h4>
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+					<div id="mnya-wind" class="tab-pane fade">
+					      <div class = "row">
+							<div class = "col-md-3">
+								<img src="zap_icon.png" style="width:50%;height:50%" class="img-circle img-responsive center-block"></img>
+							</div>
+							<div class = "col-md-9">
+								<h4 style="position:relative; top:20px;">Average energy capacity over the next 3 years is <span class="mnya-wind-3year">500 KWM</span></h4>
+							</div>
+						</div>
+						
+						<br/>
+						
+						<div class = "row">
+							<div class = "col-md-3">
+								<h2 class="center-block text-center">Per year</h2>
+							</div>
+							<div class = "col-md-3 center-block text-center">
+								2014 <h4 class="center-block text-center mnya-wind-y1"></h4>
+							</div>
+							<div class = "col-md-3 center-block text-center">
+								2015 <h4 class="center-block text-center mnya-wind-y2"></h4>
+							</div>
+							<div class = "col-md-3 center-block text-center">
+								2016 <h4 class="center-block text-center mnya-wind-y3"></h4>
+							</div>
+						</div>
+						
+						<br/>
+						
+						<div class = "row">
+							<div class = "col-md-3">
+								<h2 class="center-block text-center">Quarters</h2>
+							</div>
+							<div class = "col-md-9">
+								<div class = "center-block text-center row">
+									2014		
+								</div>
+								<div class = "row">
+									<div class = "col-md-3">
+										<h4 class="center-block text-center mnya-wind-y1q1">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center mnya-wind-y1q2">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center mnya-wind-y1q3">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center mnya-wind-y1q4">500 KW</h4>
+									</div>
+								</div>
+								
+								<br/>
+								
+								<div class = "center-block text-center row">
+									2015
+								</div>
+								<div class = "row">
+									<div class = "col-md-3">
+										<h4 class="center-block text-center mnya-wind-y2q1">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center mnya-wind-y2q2">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center mnya-wind-y2q3">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center mnya-wind-y2q4">500 KW</h4>
+									</div>
+								</div>
+								
+								<br/>
+								
+								<div class = "center-block text-center row">
+									2016
+								</div>
+								<div class = "row">
+									<div class = "col-md-3">
+										<h4 class="center-block text-center mnya-wind-y3q1">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center mnya-wind-y3q2">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center mnya-wind-y3q3">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center mnya-wind-y3q4">500 KW</h4>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				
+			</div>
+		</div>
+		
+		<div id="sfga-dialog" title="Safaga" style="height:515px; overflow:scroll">
+				
+				<ul class="nav nav-tabs">
+				  <li class="active"><a data-toggle="tab" href="#sfga-solar">Solar</a></li>
+				  <li><a data-toggle="tab" href="#sfga-wind">Wind</a></li>
+				</ul>
+
+				<div class="tab-content">
+					
+					<br/>
+					
+					<div id = "sfga-solar" class="tab-pane fade in active">
+
+						<div class = "row">
+							<div class = "col-md-3">
+								<img src="zap_icon.png" style="width:50%;height:50%" class="img-circle img-responsive center-block"></img>
+							</div>
+							<div class = "col-md-9">
+								<h4 style="position:relative; top:20px;">Average energy capacity over the next 3 years is <span class="sfga-solar-3year">500 KWM</span></h4>
+							</div>
+						</div>
+						
+						<br/>
+						
+						<div class = "row">
+							<div class = "col-md-3">
+								<h2 class="center-block text-center">Per year</h2>
+							</div>
+							<div class = "col-md-3 center-block text-center">
+								2014 <h4 class="center-block text-center sfga-solar-y1"></h4>
+							</div>
+							<div class = "col-md-3 center-block text-center">
+								2015 <h4 class="center-block text-center sfga-solar-y2"></h4>
+							</div>
+							<div class = "col-md-3 center-block text-center">
+								2016 <h4 class="center-block text-center sfga-solar-y3"></h4>
+							</div>
+						</div>
+						
+						<br/>
+						
+						<div class = "row">
+							<div class = "col-md-3">
+								<h2 class="center-block text-center">Quarters</h2>
+							</div>
+							<div class = "col-md-9">
+								<div class = "center-block text-center row">
+									2014		
+								</div>
+								<div class = "row">
+									<div class = "col-md-3">
+										<h4 class="center-block text-center sfga-solar-y1q1">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center sfga-solar-y1q2">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center sfga-solar-y1q3">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center sfga-solar-y1q4">500 KW</h4>
+									</div>
+								</div>
+								
+								<br/>
+								
+								<div class = "center-block text-center row">
+									2015
+								</div>
+								<div class = "row">
+									<div class = "col-md-3">
+										<h4 class="center-block text-center sfga-solar-y2q1">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center sfga-solar-y2q2">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center sfga-solar-y2q3">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center sfga-solar-y2q4">500 KW</h4>
+									</div>
+								</div>
+								
+								<br/>
+								
+								<div class = "center-block text-center row">
+									2016
+								</div>
+								<div class = "row">
+									<div class = "col-md-3">
+										<h4 class="center-block text-center sfga-solar-y3q1">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center sfga-solar-y3q2">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center sfga-solar-y3q3">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center sfga-solar-y3q4">500 KW</h4>
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+					<div id="sfga-wind" class="tab-pane fade">
+					      <div class = "row">
+							<div class = "col-md-3">
+								<img src="zap_icon.png" style="width:50%;height:50%" class="img-circle img-responsive center-block"></img>
+							</div>
+							<div class = "col-md-9">
+								<h4 style="position:relative; top:20px;">Average energy capacity over the next 3 years is <span class="sfga-wind-3year">500 KWM</span></h4>
+							</div>
+						</div>
+						
+						<br/>
+						
+						<div class = "row">
+							<div class = "col-md-3">
+								<h2 class="center-block text-center">Per year</h2>
+							</div>
+							<div class = "col-md-3 center-block text-center">
+								2014 <h4 class="center-block text-center sfga-wind-y1"></h4>
+							</div>
+							<div class = "col-md-3 center-block text-center">
+								2015 <h4 class="center-block text-center sfga-wind-y2"></h4>
+							</div>
+							<div class = "col-md-3 center-block text-center">
+								2016 <h4 class="center-block text-center sfga-wind-y3"></h4>
+							</div>
+						</div>
+						
+						<br/>
+						
+						<div class = "row">
+							<div class = "col-md-3">
+								<h2 class="center-block text-center">Quarters</h2>
+							</div>
+							<div class = "col-md-9">
+								<div class = "center-block text-center row">
+									2014		
+								</div>
+								<div class = "row">
+									<div class = "col-md-3">
+										<h4 class="center-block text-center sfga-wind-y1q1">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center sfga-wind-y1q2">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center sfga-wind-y1q3">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center sfga-wind-y1q4">500 KW</h4>
+									</div>
+								</div>
+								
+								<br/>
+								
+								<div class = "center-block text-center row">
+									2015
+								</div>
+								<div class = "row">
+									<div class = "col-md-3">
+										<h4 class="center-block text-center sfga-wind-y2q1">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center sfga-wind-y2q2">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center sfga-wind-y2q3">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center sfga-wind-y2q4">500 KW</h4>
+									</div>
+								</div>
+								
+								<br/>
+								
+								<div class = "center-block text-center row">
+									2016
+								</div>
+								<div class = "row">
+									<div class = "col-md-3">
+										<h4 class="center-block text-center sfga-wind-y3q1">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center sfga-wind-y3q2">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center sfga-wind-y3q3">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center sfga-wind-y3q4">500 KW</h4>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				
+			</div>
+		</div>
+		
+		<div id="luxr-dialog" title="Luxor" style="height:515px; overflow:scroll">
+				
+				<ul class="nav nav-tabs">
+				  <li class="active"><a data-toggle="tab" href="#luxr-solar">Solar</a></li>
+				  <li><a data-toggle="tab" href="#luxr-wind">Wind</a></li>
+				</ul>
+
+				<div class="tab-content">
+					
+					<br/>
+					
+					<div id = "luxr-solar" class="tab-pane fade in active">
+
+						<div class = "row">
+							<div class = "col-md-3">
+								<img src="zap_icon.png" style="width:50%;height:50%" class="img-circle img-responsive center-block"></img>
+							</div>
+							<div class = "col-md-9">
+								<h4 style="position:relative; top:20px;">Average energy capacity over the next 3 years is <span class="luxr-solar-3year">500 KWM</span></h4>
+							</div>
+						</div>
+						
+						<br/>
+						
+						<div class = "row">
+							<div class = "col-md-3">
+								<h2 class="center-block text-center">Per year</h2>
+							</div>
+							<div class = "col-md-3 center-block text-center">
+								2014 <h4 class="center-block text-center luxr-solar-y1"></h4>
+							</div>
+							<div class = "col-md-3 center-block text-center">
+								2015 <h4 class="center-block text-center luxr-solar-y2"></h4>
+							</div>
+							<div class = "col-md-3 center-block text-center">
+								2016 <h4 class="center-block text-center luxr-solar-y3"></h4>
+							</div>
+						</div>
+						
+						<br/>
+						
+						<div class = "row">
+							<div class = "col-md-3">
+								<h2 class="center-block text-center">Quarters</h2>
+							</div>
+							<div class = "col-md-9">
+								<div class = "center-block text-center row">
+									2014		
+								</div>
+								<div class = "row">
+									<div class = "col-md-3">
+										<h4 class="center-block text-center luxr-solar-y1q1">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center luxr-solar-y1q2">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center luxr-solar-y1q3">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center luxr-solar-y1q4">500 KW</h4>
+									</div>
+								</div>
+								
+								<br/>
+								
+								<div class = "center-block text-center row">
+									2015
+								</div>
+								<div class = "row">
+									<div class = "col-md-3">
+										<h4 class="center-block text-center luxr-solar-y2q1">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center luxr-solar-y2q2">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center luxr-solar-y2q3">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center luxr-solar-y2q4">500 KW</h4>
+									</div>
+								</div>
+								
+								<br/>
+								
+								<div class = "center-block text-center row">
+									2016
+								</div>
+								<div class = "row">
+									<div class = "col-md-3">
+										<h4 class="center-block text-center luxr-solar-y3q1">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center luxr-solar-y3q2">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center luxr-solar-y3q3">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center luxr-solar-y3q4">500 KW</h4>
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+					<div id="luxr-wind" class="tab-pane fade">
+					      <div class = "row">
+							<div class = "col-md-3">
+								<img src="zap_icon.png" style="width:50%;height:50%" class="img-circle img-responsive center-block"></img>
+							</div>
+							<div class = "col-md-9">
+								<h4 style="position:relative; top:20px;">Average energy capacity over the next 3 years is <span class="luxr-wind-3year">500 KWM</span></h4>
+							</div>
+						</div>
+						
+						<br/>
+						
+						<div class = "row">
+							<div class = "col-md-3">
+								<h2 class="center-block text-center">Per year</h2>
+							</div>
+							<div class = "col-md-3 center-block text-center">
+								2014 <h4 class="center-block text-center luxr-wind-y1"></h4>
+							</div>
+							<div class = "col-md-3 center-block text-center">
+								2015 <h4 class="center-block text-center luxr-wind-y2"></h4>
+							</div>
+							<div class = "col-md-3 center-block text-center">
+								2016 <h4 class="center-block text-center luxr-wind-y3"></h4>
+							</div>
+						</div>
+						
+						<br/>
+						
+						<div class = "row">
+							<div class = "col-md-3">
+								<h2 class="center-block text-center">Quarters</h2>
+							</div>
+							<div class = "col-md-9">
+								<div class = "center-block text-center row">
+									2014		
+								</div>
+								<div class = "row">
+									<div class = "col-md-3">
+										<h4 class="center-block text-center luxr-wind-y1q1">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center luxr-wind-y1q2">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center luxr-wind-y1q3">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center luxr-wind-y1q4">500 KW</h4>
+									</div>
+								</div>
+								
+								<br/>
+								
+								<div class = "center-block text-center row">
+									2015
+								</div>
+								<div class = "row">
+									<div class = "col-md-3">
+										<h4 class="center-block text-center luxr-wind-y2q1">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center luxr-wind-y2q2">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center luxr-wind-y2q3">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center luxr-wind-y2q4">500 KW</h4>
+									</div>
+								</div>
+								
+								<br/>
+								
+								<div class = "center-block text-center row">
+									2016
+								</div>
+								<div class = "row">
+									<div class = "col-md-3">
+										<h4 class="center-block text-center luxr-wind-y3q1">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center luxr-wind-y3q2">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center luxr-wind-y3q3">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center luxr-wind-y3q4">500 KW</h4>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				
+			</div>
+		</div>
+		
+		<div id="asyt-dialog" title="Assyut" style="height:515px; overflow:scroll">
+				
+				<ul class="nav nav-tabs">
+				  <li class="active"><a data-toggle="tab" href="#asyt-solar">Solar</a></li>
+				  <li><a data-toggle="tab" href="#asyt-wind">Wind</a></li>
+				</ul>
+
+				<div class="tab-content">
+					
+					<br/>
+					
+					<div id = "asyt-solar" class="tab-pane fade in active">
+
+						<div class = "row">
+							<div class = "col-md-3">
+								<img src="zap_icon.png" style="width:50%;height:50%" class="img-circle img-responsive center-block"></img>
+							</div>
+							<div class = "col-md-9">
+								<h4 style="position:relative; top:20px;">Average energy capacity over the next 3 years is <span class="asyt-solar-3year">500 KWM</span></h4>
+							</div>
+						</div>
+						
+						<br/>
+						
+						<div class = "row">
+							<div class = "col-md-3">
+								<h2 class="center-block text-center">Per year</h2>
+							</div>
+							<div class = "col-md-3 center-block text-center">
+								2014 <h4 class="center-block text-center asyt-solar-y1"></h4>
+							</div>
+							<div class = "col-md-3 center-block text-center">
+								2015 <h4 class="center-block text-center asyt-solar-y2"></h4>
+							</div>
+							<div class = "col-md-3 center-block text-center">
+								2016 <h4 class="center-block text-center asyt-solar-y3"></h4>
+							</div>
+						</div>
+						
+						<br/>
+						
+						<div class = "row">
+							<div class = "col-md-3">
+								<h2 class="center-block text-center">Quarters</h2>
+							</div>
+							<div class = "col-md-9">
+								<div class = "center-block text-center row">
+									2014		
+								</div>
+								<div class = "row">
+									<div class = "col-md-3">
+										<h4 class="center-block text-center asyt-solar-y1q1">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center asyt-solar-y1q2">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center asyt-solar-y1q3">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center asyt-solar-y1q4">500 KW</h4>
+									</div>
+								</div>
+								
+								<br/>
+								
+								<div class = "center-block text-center row">
+									2015
+								</div>
+								<div class = "row">
+									<div class = "col-md-3">
+										<h4 class="center-block text-center asyt-solar-y2q1">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center asyt-solar-y2q2">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center asyt-solar-y2q3">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center asyt-solar-y2q4">500 KW</h4>
+									</div>
+								</div>
+								
+								<br/>
+								
+								<div class = "center-block text-center row">
+									2016
+								</div>
+								<div class = "row">
+									<div class = "col-md-3">
+										<h4 class="center-block text-center asyt-solar-y3q1">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center asyt-solar-y3q2">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center asyt-solar-y3q3">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center asyt-solar-y3q4">500 KW</h4>
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+					<div id="asyt-wind" class="tab-pane fade">
+					      <div class = "row">
+							<div class = "col-md-3">
+								<img src="zap_icon.png" style="width:50%;height:50%" class="img-circle img-responsive center-block"></img>
+							</div>
+							<div class = "col-md-9">
+								<h4 style="position:relative; top:20px;">Average energy capacity over the next 3 years is <span class="asyt-wind-3year">500 KWM</span></h4>
+							</div>
+						</div>
+						
+						<br/>
+						
+						<div class = "row">
+							<div class = "col-md-3">
+								<h2 class="center-block text-center">Per year</h2>
+							</div>
+							<div class = "col-md-3 center-block text-center">
+								2014 <h4 class="center-block text-center asyt-wind-y1"></h4>
+							</div>
+							<div class = "col-md-3 center-block text-center">
+								2015 <h4 class="center-block text-center asyt-wind-y2"></h4>
+							</div>
+							<div class = "col-md-3 center-block text-center">
+								2016 <h4 class="center-block text-center asyt-wind-y3"></h4>
+							</div>
+						</div>
+						
+						<br/>
+						
+						<div class = "row">
+							<div class = "col-md-3">
+								<h2 class="center-block text-center">Quarters</h2>
+							</div>
+							<div class = "col-md-9">
+								<div class = "center-block text-center row">
+									2014		
+								</div>
+								<div class = "row">
+									<div class = "col-md-3">
+										<h4 class="center-block text-center asyt-wind-y1q1">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center asyt-wind-y1q2">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center asyt-wind-y1q3">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center asyt-wind-y1q4">500 KW</h4>
+									</div>
+								</div>
+								
+								<br/>
+								
+								<div class = "center-block text-center row">
+									2015
+								</div>
+								<div class = "row">
+									<div class = "col-md-3">
+										<h4 class="center-block text-center asyt-wind-y2q1">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center asyt-wind-y2q2">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center asyt-wind-y2q3">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center asyt-wind-y2q4">500 KW</h4>
+									</div>
+								</div>
+								
+								<br/>
+								
+								<div class = "center-block text-center row">
+									2016
+								</div>
+								<div class = "row">
+									<div class = "col-md-3">
+										<h4 class="center-block text-center asyt-wind-y3q1">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center asyt-wind-y3q2">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center asyt-wind-y3q3">500 KW</h4>
+									</div>
+									<div class = "col-md-3">
+										<h4 class="center-block text-center asyt-wind-y3q4">500 KW</h4>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				
+			</div>
+		</div>
+		
+		<script src="js/jquery-1.11.3.min.js"></script> 
+		<script src="js/bootstrap.js" type="text/javascript"></script>
+		<script src="js/jquery-ui.js" type="text/javascript"></script>
+		<script src="js/Chart.js" type="text/javascript"></script>
+		<script src="js/mapper.js" type="text/javascript"></script>
+
+	</body>
+</html>
