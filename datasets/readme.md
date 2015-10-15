@@ -1,1 +1,3 @@
-CSV files per city detailing solar (MJ/m2) and wind (m/s at ground-level) readings from 2009 till 2013
+CSV files per city detailing solar (MJ/m2) and wind (m/s at ground-level) readings from 2009 till 2013.
+
+Obtained and parsed from http://globalweather.tamu.edu/
